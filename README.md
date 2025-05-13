@@ -1,5 +1,3 @@
-# prototipo-usina
-
 # API de Monitoramento de Usinas Fotovoltaicas
 
 Este projeto consiste em uma API desenvolvida com **FastAPI** para o monitoramento de usinas fotovoltaicas. Ela oferece endpoints para manipulação de dados sobre **usinas**, **inversores** e **métricas**. O banco de dados utilizado é o **SQLite**, e o **SQLAlchemy** é empregado para a comunicação entre a API e o banco de dados.
