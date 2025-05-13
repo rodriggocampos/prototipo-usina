@@ -77,3 +77,39 @@ async def geracao_inversor(
         "inversor_id": inversor_id,
         "geracao_total": total
     }
+
+@router.post("/importar")
+async def importar_metricas(
+    raw_metricas: list[dict],
+    db: Session = Depends(get_db),
+):
+    try:
+        mappings = []
+        for m in raw_metricas:
+            dt = m.get("datetime")
+            if isinstance(dt, dict) and "$date" in dt:
+                iso_str = dt["$date"]
+            else:
+                iso_str = dt
+            parsed_dt = isoparse(iso_str) if isinstance(iso_str, str) else iso_str
+
+            potencia = m.get("potencia_ativa_watt")
+            temperatura = m.get("temperatura_celsius")
+
+            potencia = float(potencia) if potencia is not None else 0.0
+            temperatura = float(temperatura) if temperatura is not None else 0.0
+
+            mappings.append({
+                "datetime": parsed_dt,
+                "inversor_id": m["inversor_id"],
+                "potencia_ativa_watt": potencia,
+                "temperatura_celsius": temperatura,
+            })
+
+        stmt = insert(Metrica)
+        db.execute(stmt, mappings)
+        db.commit()
+        return {"mensagem": f"{len(mappings)} métricas importadas com sucesso"}
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(status_code=500, detail=str(e))
