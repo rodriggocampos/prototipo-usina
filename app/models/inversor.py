@@ -12,9 +12,5 @@ class Inversor(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
-    metricas = relationship("Metrica", back_populates="inversor")
-    metricas = relationship(
-        "Metrica",
-        back_populates="inversor",
-        cascade="all, delete-orphan"
-    )
+    metricas = relationship("Metrica", back_populates="inversor", cascade="all, delete-orphan")
+    

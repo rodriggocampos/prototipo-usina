@@ -12,8 +12,4 @@ class Metrica(Base):
     potencia_ativa_watt = Column(Float, nullable=False)
     temperatura_celsius = Column(Float, nullable=False)
 
-    inversor = relationship(
-       "Inversor",
-       back_populates="metricas",
-       lazy="joined",
-   )
+    inversor = relationship("Inversor", back_populates="metricas", lazy="joined")
