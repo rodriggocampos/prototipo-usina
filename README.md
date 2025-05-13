@@ -55,18 +55,21 @@ A estrutura do código foi organizada de forma modular para garantir a clareza e
    cd prototipo-usina
 
 2. **Crie um ambiente virtual (opcional, mas recomendado):**
+    ```bash
     python -m venv venv
     source venv/bin/activate  # No Windows, use: venv\Scripts\activate
     
 3. **Instale as dependências:**
+    ```bash
     pip install -r requirements.txt
 
 4. **Execute o aplicação:**
+    ```bash
     uvicorn app.main:app --reload
 
 5. **Em outro terminal rode os seguintes comandos para inserir usinas e inversores e importar as métricas:**
+    ```bash
     python -m scripts.init_db
-
     python scripts/import_metrics.py
 
 ## Estrutura Técnica
