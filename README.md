@@ -8,27 +8,27 @@ Este projeto consiste em uma API desenvolvida com **FastAPI** para o monitoramen
 
 A estrutura do código foi organizada de forma modular para garantir a clareza e a manutenção facilitada do projeto. A seguir está uma explicação de como o código foi organizado:
 
-├── app/
-│ ├── init.py # Inicializa a aplicação FastAPI
-│ ├── main.py # Arquivo principal da aplicação, onde a FastAPI é instanciada
-│ ├── models/ # Contém os modelos de dados (SQLAlchemy)
-│ │ ├── init.py
-│ │ ├── usina.py # Modelo para dados de usina
-│ │ ├── inversor.py # Modelo para dados de inversores
-│ │ └── metricas.py # Modelo para dados de métricas
-│ ├── schemas/ # Contém os esquemas de dados (pydantic)
-│ │ ├── init.py
-│ │ ├── usina.py # Esquema para validação de dados de usina
-│ │ ├── inversor.py # Esquema para validação de dados de inversores
-│ │ └── metricas.py # Esquema para validação de dados de métricas
-│ ├── crud/ # Operações CRUD (Create, Read, Update, Delete)
-│ │ ├── init.py
-│ │ ├── usina.py # CRUD para usinas
-│ │ ├── inversor.py # CRUD para inversores
-│ │ └── metricas.py # CRUD para métricas
-│ └── database.py # Configuração do banco de dados (SQLAlchemy)
-├── requirements.txt # Dependências do projeto
-└── README.md # Este arquivo
+>├── app/
+>│ ├── init.py # Inicializa a aplicação FastAPI
+>│ ├── main.py # Arquivo principal da aplicação, onde a FastAPI é instanciada
+>│ ├── models/ # Contém os modelos de dados (SQLAlchemy)
+>│ │ ├── init.py
+>│ │ ├── usina.py # Modelo para dados de usina
+>│ │ ├── inversor.py # Modelo para dados de inversores
+>│ │ └── metricas.py # Modelo para dados de métricas
+>│ ├── schemas/ # Contém os esquemas de dados (pydantic)
+>│ │ ├── init.py
+>│ │ ├── usina.py # Esquema para validação de dados de usina
+>│ │ ├── inversor.py # Esquema para validação de dados de inversores
+>│ │ └── metricas.py # Esquema para validação de dados de métricas
+>│ ├── crud/ # Operações CRUD (Create, Read, Update, Delete)
+>│ │ ├── init.py
+>│ │ ├── usina.py # CRUD para usinas
+>│ │ ├── inversor.py # CRUD para inversores
+>│ │ └── metricas.py # CRUD para métricas
+>│ └── database.py # Configuração do banco de dados (SQLAlchemy)
+>├── requirements.txt # Dependências do projeto
+>└── README.md # Este arquivo
 
 
 ### Descrição das pastas e arquivos
